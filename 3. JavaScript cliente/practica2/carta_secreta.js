@@ -1,11 +1,12 @@
+const emoji = document.getElementById("emoji");
 const laCarta = document.getElementById("la_carta");
+const cantidad = document.getElementById("cantidad");
 const botonPrincipal = document.getElementById("boton_principal");
+const pushale = document.getElementById("pushale");
 const botonReinicia = document.getElementById("boton_reinicia");
 const cartas = iniciaCartas();
 
-console.log(cartas);
-
-botonPrincipal.addEventListener("click", descubreCarta);
+pushale.addEventListener("click", descubreCarta);
 
 function iniciaCartas() {
   const cartas = [];
@@ -28,5 +29,13 @@ function shuffle(a) {
 }
 
 function descubreCarta() {
-
+  emoji.innerText = '\u{1F631}';
+  const carta = cartas.pop();
+  laCarta.src = "cards/" + carta;
+  console.log(cantidad.innerText);
+  cantidad.innerText = cartas.length.toString();
+  if (cartas.length == 0) {
+    botonPrincipal.style.display = 'none';  // invisible
+    botonReinicia.style.display = 'block';  // visible
+  }
 }
