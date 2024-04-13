@@ -1,0 +1,6 @@
+=============
+Contenido
+del
+archivo
+001.txt
+=============
