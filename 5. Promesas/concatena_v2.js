@@ -24,4 +24,4 @@ function main() {
   console.log('Fin de main');
 }
 
-main()
+main();
